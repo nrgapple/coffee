@@ -11,18 +11,10 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                PartCell(
-                    type: "RATIO", value: "16:1", unit: "standard"
-                )
-                PartCell(
-                    type: "RATIO", value: "16:1", unit: "standard"
-                )
-                PartCell(
-                    type: "RATIO", value: "16:1", unit: "standard"
-                )
-                PartCell(
-                    type: "RATIO", value: "16:1", unit: "standard"
-                )
+                RatioView()
+                GroundsView()
+                WaterView()
+                BrewView()
             }
                 .navigationBarTitle(Text("Calculator"), displayMode: .inline)
         }
@@ -30,7 +22,9 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
+    static let viewModel = CoffeePartsViewModel()
     static var previews: some View {
         ContentView()
+            .environmentObject(viewModel)
     }
 }

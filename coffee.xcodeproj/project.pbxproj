@@ -11,10 +11,13 @@
 		1A2071CC259D4DFB0028510B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2071CB259D4DFB0028510B /* ContentView.swift */; };
 		1A2071CE259D4DFC0028510B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2071CD259D4DFC0028510B /* Assets.xcassets */; };
 		1A2071D1259D4DFC0028510B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2071D0259D4DFC0028510B /* Preview Assets.xcassets */; };
-		1A2071DA259D4EA80028510B /* PartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2071D9259D4EA80028510B /* PartCell.swift */; };
+		1A2071DA259D4EA80028510B /* RatioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2071D9259D4EA80028510B /* RatioView.swift */; };
 		1A2071DE259D51BF0028510B /* IncrementButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2071DD259D51BF0028510B /* IncrementButton.swift */; };
-		1A2071E3259D5BB90028510B /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2071E2259D5BB90028510B /* ModelData.swift */; };
+		1A2071E3259D5BB90028510B /* CoffeePartsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2071E2259D5BB90028510B /* CoffeePartsViewModel.swift */; };
 		1A2071E8259D628C0028510B /* CoffeeParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2071E7259D628C0028510B /* CoffeeParts.swift */; };
+		1A84D66325A2BC9C0036CF9E /* WaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A84D66225A2BC9C0036CF9E /* WaterView.swift */; };
+		1A84D66625A2BD080036CF9E /* BrewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A84D66525A2BD080036CF9E /* BrewView.swift */; };
+		1AD2F288259E7D9800FB1555 /* GroundsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD2F287259E7D9800FB1555 /* GroundsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,10 +27,13 @@
 		1A2071CD259D4DFC0028510B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A2071D0259D4DFC0028510B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1A2071D2259D4DFC0028510B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1A2071D9259D4EA80028510B /* PartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartCell.swift; sourceTree = "<group>"; };
+		1A2071D9259D4EA80028510B /* RatioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatioView.swift; sourceTree = "<group>"; };
 		1A2071DD259D51BF0028510B /* IncrementButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncrementButton.swift; sourceTree = "<group>"; };
-		1A2071E2259D5BB90028510B /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		1A2071E2259D5BB90028510B /* CoffeePartsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeePartsViewModel.swift; sourceTree = "<group>"; };
 		1A2071E7259D628C0028510B /* CoffeeParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeParts.swift; sourceTree = "<group>"; };
+		1A84D66225A2BC9C0036CF9E /* WaterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterView.swift; sourceTree = "<group>"; };
+		1A84D66525A2BD080036CF9E /* BrewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewView.swift; sourceTree = "<group>"; };
+		1AD2F287259E7D9800FB1555 /* GroundsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +89,10 @@
 			children = (
 				1A2071E1259D5A460028510B /* Helpers */,
 				1A2071CB259D4DFB0028510B /* ContentView.swift */,
-				1A2071D9259D4EA80028510B /* PartCell.swift */,
+				1A2071D9259D4EA80028510B /* RatioView.swift */,
+				1A84D66225A2BC9C0036CF9E /* WaterView.swift */,
+				1A84D66525A2BD080036CF9E /* BrewView.swift */,
+				1AD2F287259E7D9800FB1555 /* GroundsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -99,7 +108,7 @@
 		1A2071E6259D62710028510B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1A2071E2259D5BB90028510B /* ModelData.swift */,
+				1A2071E2259D5BB90028510B /* CoffeePartsViewModel.swift */,
 				1A2071E7259D628C0028510B /* CoffeeParts.swift */,
 			);
 			path = Model;
@@ -174,11 +183,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A84D66325A2BC9C0036CF9E /* WaterView.swift in Sources */,
 				1A2071CC259D4DFB0028510B /* ContentView.swift in Sources */,
+				1AD2F288259E7D9800FB1555 /* GroundsView.swift in Sources */,
 				1A2071DE259D51BF0028510B /* IncrementButton.swift in Sources */,
-				1A2071E3259D5BB90028510B /* ModelData.swift in Sources */,
-				1A2071DA259D4EA80028510B /* PartCell.swift in Sources */,
+				1A2071E3259D5BB90028510B /* CoffeePartsViewModel.swift in Sources */,
+				1A2071DA259D4EA80028510B /* RatioView.swift in Sources */,
 				1A2071E8259D628C0028510B /* CoffeeParts.swift in Sources */,
+				1A84D66625A2BD080036CF9E /* BrewView.swift in Sources */,
 				1A2071CA259D4DFB0028510B /* coffeeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
