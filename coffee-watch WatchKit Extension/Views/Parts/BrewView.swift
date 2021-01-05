@@ -21,7 +21,7 @@ struct BrewView: View {
         self.showPad = false
     }
     func Units() -> Float {
-        if viewModel.parts.waterAmount.unit == .onces {
+        if viewModel.parts.brewAmount.unit == .onces {
             return viewModel.parts.brewAmount.value / 28.35
         } else {
             return viewModel.parts.brewAmount.value

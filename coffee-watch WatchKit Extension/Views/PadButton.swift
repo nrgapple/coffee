@@ -37,6 +37,7 @@ struct PadButton: View {
         .font(Font.custom("Montserrat-Medium", size: 20))
         .buttonStyle(PlainButtonStyle())
         .frame(maxWidth: .infinity, maxHeight: 40)
+        .contentShape(Rectangle())
         .background(Color.accentColor)
         .cornerRadius(15)
         .padding(.vertical, 1)
@@ -45,7 +46,7 @@ struct PadButton: View {
 
 struct PadButton_Previews: PreviewProvider {
     static var previews: some View {
-        PadButton(value: .constant("0"), number: "1")
+        PadButton(value: .constant("0"), number: ".")
         PadButton(value: .constant("0"), number: "", image: "delete.left", delete: true)
     }
 }

@@ -22,9 +22,10 @@ struct RatioView: View {
     }
     func HandleNewValue(value: String) {
         if let floatValue = Float(value) {
-            viewModel.Update(value: floatValue, part: .ratio)
+            if floatValue < 1000 {
+                viewModel.Update(value: floatValue, part: .ratio)
+            }
         }
-        
         self.showPad = false
     }
     var body: some View {
