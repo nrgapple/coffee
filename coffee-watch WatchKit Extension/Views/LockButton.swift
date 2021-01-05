@@ -15,6 +15,7 @@ struct LockButton: View {
     var body: some View {
         Button (action: {
             viewModel.Lock(part: part)
+            WKInterfaceDevice.current().play(.click)
         }, label: {
             Text(label)
                 .font(Font.custom("Montserrat-Medium", size: 15))

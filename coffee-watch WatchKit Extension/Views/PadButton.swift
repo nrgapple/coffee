@@ -27,6 +27,7 @@ struct PadButton: View {
                     value += number
                 }
             }
+            WKInterfaceDevice.current().play(.click)
         }, label: {
             if image.isEmpty {
                 Text(number)

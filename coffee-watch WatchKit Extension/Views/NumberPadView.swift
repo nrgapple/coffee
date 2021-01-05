@@ -13,6 +13,7 @@ struct NumberPadView: View {
     init(fromInitial initial: String, fromDone doneFunc: @escaping ((String) -> Void)) {
         self.done = doneFunc
         _value = State(initialValue: initial)
+        WKInterfaceDevice.current().play(.start)
     }
     
     var body: some View {
@@ -22,6 +23,7 @@ struct NumberPadView: View {
                     .multilineTextAlignment(.leading)
                     .frame(maxWidth: .infinity, maxHeight: 30)
                 Button(action: {
+                    WKInterfaceDevice.current().play(.success)
                     self.done(value)
                 }, label: {
                     Text("Done")

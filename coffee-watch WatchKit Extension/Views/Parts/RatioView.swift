@@ -28,6 +28,18 @@ struct RatioView: View {
         }
         self.showPad = false
     }
+    func Strength() -> String {
+        switch viewModel.parts.ratio {
+        case 0..<15:
+            return "stronger"
+        case 15..<19:
+            return "standard"
+        case 19..<1000:
+            return "weaker"
+        default:
+            return "impossible"
+        }
+    }
     var body: some View {
         VStack {
             LockButton(part: .ratio, label: "RATIO")
@@ -45,6 +57,10 @@ struct RatioView: View {
             }
             .padding([.leading, .trailing], 4.0)
             .fixedSize()
+            Text(Strength())
+                .font(Font.custom("Montserrat-Medium", size: 15))
+                .frame(width: 70)
+                .foregroundColor(TextColor())
         }
         .padding([.top, .bottom], 4)
         .frame(maxWidth: .infinity)

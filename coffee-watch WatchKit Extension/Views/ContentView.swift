@@ -9,16 +9,18 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ScrollView {
-            VStack {
-                RatioView()
-                GroundsView()
-                WaterView()
-                BrewView()
+        NavigationView {
+            ScrollView {
+                VStack {
+                    RatioView()
+                    GroundsView()
+                    WaterView()
+                    BrewView()
+                }
+                .font(Font.custom("Montserrat-Light", size: 33))
             }
-            .font(Font.custom("Montserrat-Light", size: 33))
+            .navigationTitle("Coffio")
         }
-        
     }
 }
 

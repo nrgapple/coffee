@@ -15,12 +15,12 @@ struct MeasureUnitsButton: View {
     var body: some View {
         Button (action: {
             viewModel.UpdateUnits(part: part)
+            WKInterfaceDevice.current().play(.click)
         }, label: {
             Text(unit == .grams ? "grams" : "ounces")
         })
         .font(Font.custom("Montserrat-Medium", size: 15))
         .frame(width: 70)
-        .multilineTextAlignment(.leading)
         .buttonStyle(PlainButtonStyle())
     }
 }

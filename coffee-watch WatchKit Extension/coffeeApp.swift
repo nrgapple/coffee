@@ -16,7 +16,6 @@ struct coffeeApp: App {
                 ContentView()
                     .environmentObject(viewModel)
             }
-            .navigationTitle("Coffio")
         }
 
         WKNotificationScene(controller: NotificationController.self, category: "myCategory")
