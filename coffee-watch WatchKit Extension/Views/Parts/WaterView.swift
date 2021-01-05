@@ -5,10 +5,13 @@ struct WaterView: View {
     @State private var showPad = false
     
     func BackgroundColor() -> Color {
-        return viewModel.parts.locked == .water ? Color.red : Color.black
+        return viewModel.parts.locked == .water ? Color.accentColor : Color.black
     }
     func TextColor() -> Color {
         return viewModel.parts.locked == .water ? Color.black : Color.white
+    }
+    func ValueColor() -> Color {
+        return viewModel.parts.locked == .water ? Color.black : Color.accentColor
     }
     func HandleNewValue(value: String) {
         if let floatValue = Float(value) {
@@ -27,21 +30,25 @@ struct WaterView: View {
     var body: some View {
         VStack {
             LockButton(part: .water, label: "WATER")
-                .padding(.top, 4)
+                .foregroundColor(TextColor())
             HStack {
                 Button(action: {
                     self.showPad.toggle()
                 }, label: {
                     Text("\(Units().cleaner)")
                 })
-                MeasureUnitsButton(part: .water, unit: viewModel.parts.waterAmount.unit)
+                .font(Font.custom("Montserrat-Medium", size: 30))
+                .buttonStyle(PlainButtonStyle())
+                .foregroundColor(ValueColor())
             }
-            .padding([.leading, .bottom, .trailing], 4.0)
+            .padding([.leading, .trailing], 4.0)
+            MeasureUnitsButton(part: .water, unit: viewModel.parts.waterAmount.unit)
+                .foregroundColor(TextColor())
         }
+        .padding([.top, .bottom], 4)
         .frame(maxWidth: .infinity)
         .background(BackgroundColor())
         .cornerRadius(15)
-        .foregroundColor(TextColor())
         .sheet(isPresented: $showPad, content: {
             NumberPadView(fromInitial: "\(Units().cleaner)", fromDone: HandleNewValue)
         })

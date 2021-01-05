@@ -16,14 +16,17 @@ struct MeasureUnitsButton: View {
         Button (action: {
             viewModel.UpdateUnits(part: part)
         }, label: {
-            Text(unit == .grams ? "g" : "oz")
+            Text(unit == .grams ? "grams" : "ounces")
         })
-        .frame(width: 50.0)
+        .font(Font.custom("Montserrat-Medium", size: 15))
+        .frame(width: 70)
+        .multilineTextAlignment(.leading)
+        .buttonStyle(PlainButtonStyle())
     }
 }
 
 struct MeasureUnitsButton_Previews: PreviewProvider {
     static var previews: some View {
-        MeasureUnitsButton(part: .grounds, unit: .grams)
+        MeasureUnitsButton(part: .grounds, unit: .onces)
     }
 }

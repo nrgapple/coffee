@@ -38,6 +38,8 @@
 		1ABEFC4525A3BEB5004770FC /* NumberPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABEFC4425A3BEB5004770FC /* NumberPadView.swift */; };
 		1ABEFC4B25A3C78A004770FC /* PadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABEFC4A25A3C78A004770FC /* PadButton.swift */; };
 		1ABEFC5225A3EFD3004770FC /* FloatExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABEFC5125A3EFD3004770FC /* FloatExtensions.swift */; };
+		1ABEFC6525A406F4004770FC /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1ABEFC6425A406F4004770FC /* Montserrat-Light.ttf */; };
+		1ABEFC6B25A40F1D004770FC /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1ABEFC6A25A40F1D004770FC /* Montserrat-Medium.ttf */; };
 		1AD2F288259E7D9800FB1555 /* GroundsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD2F287259E7D9800FB1555 /* GroundsView.swift */; };
 /* End PBXBuildFile section */
 
@@ -119,6 +121,8 @@
 		1ABEFC4425A3BEB5004770FC /* NumberPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPadView.swift; sourceTree = "<group>"; };
 		1ABEFC4A25A3C78A004770FC /* PadButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadButton.swift; sourceTree = "<group>"; };
 		1ABEFC5125A3EFD3004770FC /* FloatExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatExtensions.swift; sourceTree = "<group>"; };
+		1ABEFC6425A406F4004770FC /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		1ABEFC6A25A40F1D004770FC /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		1AD2F287259E7D9800FB1555 /* GroundsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -224,6 +228,7 @@
 		1A84D67D25A391130036CF9E /* coffee-watch WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				1ABEFC5F25A4065B004770FC /* Fonts */,
 				1ABEFC5025A3EFBD004770FC /* Extensions */,
 				1A84D6A325A394FC0036CF9E /* Views */,
 				1A84D67E25A391130036CF9E /* coffeeApp.swift */,
@@ -276,6 +281,15 @@
 				1ABEFC5125A3EFD3004770FC /* FloatExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1ABEFC5F25A4065B004770FC /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1ABEFC6A25A40F1D004770FC /* Montserrat-Medium.ttf */,
+				1ABEFC6425A406F4004770FC /* Montserrat-Light.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,7 +437,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ABEFC6525A406F4004770FC /* Montserrat-Light.ttf in Resources */,
 				1A84D68C25A391140036CF9E /* Preview Assets.xcassets in Resources */,
+				1ABEFC6B25A40F1D004770FC /* Montserrat-Medium.ttf in Resources */,
 				1A84D68925A391130036CF9E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

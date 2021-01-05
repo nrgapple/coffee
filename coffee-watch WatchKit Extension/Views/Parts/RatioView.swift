@@ -12,10 +12,13 @@ struct RatioView: View {
     @State private var showPad = false
     
     func BackgroundColor() -> Color {
-        return viewModel.parts.locked == .ratio ? Color.red : Color.black
+        return viewModel.parts.locked == .ratio ? Color.accentColor : Color.black
     }
     func TextColor() -> Color {
         return viewModel.parts.locked == .ratio ? Color.black : Color.white
+    }
+    func ValueColor() -> Color {
+        return viewModel.parts.locked == .ratio ? Color.black : Color.accentColor
     }
     func HandleNewValue(value: String) {
         if let floatValue = Float(value) {
@@ -27,22 +30,25 @@ struct RatioView: View {
     var body: some View {
         VStack {
             LockButton(part: .ratio, label: "RATIO")
-                .padding(.top, 4)
+                .foregroundColor(TextColor())
             HStack {
                 Button(action: {
                     self.showPad.toggle()
                 }, label: {
                     Text("\(viewModel.parts.ratio.cleaner)")
+                    Text(": 1")
                 })
-                Text(": 1")
+                .font(Font.custom("Montserrat-Medium", size: 30))
+                .buttonStyle(PlainButtonStyle())
+                .foregroundColor(ValueColor())
             }
-            .padding([.leading, .bottom, .trailing], 4.0)
+            .padding([.leading, .trailing], 4.0)
             .fixedSize()
         }
+        .padding([.top, .bottom], 4)
         .frame(maxWidth: .infinity)
         .background(BackgroundColor())
         .cornerRadius(15)
-        .foregroundColor(TextColor())
         .sheet(isPresented: $showPad, content: {
             NumberPadView(fromInitial: "\(viewModel.parts.ratio.cleaner)", fromDone: HandleNewValue)
         })

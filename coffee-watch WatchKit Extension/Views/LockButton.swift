@@ -17,6 +17,7 @@ struct LockButton: View {
             viewModel.Lock(part: part)
         }, label: {
             Text(label)
+                .font(Font.custom("Montserrat-Medium", size: 15))
         })
         .fixedSize()
         .buttonStyle(PlainButtonStyle())

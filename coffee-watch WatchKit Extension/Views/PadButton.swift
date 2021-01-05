@@ -34,8 +34,9 @@ struct PadButton: View {
                 Image(systemName: image)
             }
         })
+        .font(Font.custom("Montserrat-Medium", size: 20))
         .buttonStyle(PlainButtonStyle())
-        .frame(maxWidth: .infinity, maxHeight: 30)
+        .frame(maxWidth: .infinity, maxHeight: 40)
         .background(Color.accentColor)
         .cornerRadius(15)
         .padding(.vertical, 1)

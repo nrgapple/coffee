@@ -5,10 +5,13 @@ struct GroundsView: View {
     @State private var showPad = false
     
     func BackgroundColor() -> Color {
-        return viewModel.parts.locked == .grounds ? Color.red : Color.black
+        return viewModel.parts.locked == .grounds ? Color.accentColor : Color.black
     }
     func TextColor() -> Color {
         return viewModel.parts.locked == .grounds ? Color.black : Color.white
+    }
+    func ValueColor() -> Color {
+        return viewModel.parts.locked == .grounds ? Color.black : Color.accentColor
     }
     func HandleNewValue(value: String) {
         if let floatValue = Float(value) {
@@ -27,21 +30,25 @@ struct GroundsView: View {
     var body: some View {
         VStack {
             LockButton(part: .grounds, label: "GROUNDS")
-                .padding(.top, 4)
+                .foregroundColor(TextColor())
             HStack {
                 Button(action: {
                     self.showPad.toggle()
                 }, label: {
                     Text("\(Units().cleaner)")
                 })
-                MeasureUnitsButton(part: .grounds, unit: viewModel.parts.groundsAmount.unit)
+                .font(Font.custom("Montserrat-Medium", size: 30))
+                .buttonStyle(PlainButtonStyle())
+                .foregroundColor(ValueColor())
             }
-            .padding([.leading, .bottom, .trailing], 4.0)
+            .padding([.leading, .trailing], 4.0)
+            MeasureUnitsButton(part: .grounds, unit: viewModel.parts.groundsAmount.unit)
+                .foregroundColor(TextColor())
         }
+        .padding([.top, .bottom], 4)
         .frame(maxWidth: .infinity)
         .background(BackgroundColor())
         .cornerRadius(15)
-        .foregroundColor(TextColor())
         .sheet(isPresented: $showPad, content: {
             NumberPadView(fromInitial: "\(Units().cleaner)", fromDone: HandleNewValue)
         })

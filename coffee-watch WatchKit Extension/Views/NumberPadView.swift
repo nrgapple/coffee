@@ -28,6 +28,7 @@ struct NumberPadView: View {
                 })
                 .padding()
             }
+            .font(Font.custom("Montserrat-Medium", size: 20))
             HStack {
                 PadButton(value: $value, number: "1")
                 PadButton(value: $value, number: "2")

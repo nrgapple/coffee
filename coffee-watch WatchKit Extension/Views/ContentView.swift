@@ -16,6 +16,7 @@ struct ContentView: View {
                 WaterView()
                 BrewView()
             }
+            .font(Font.custom("Montserrat-Light", size: 33))
         }
         
     }
