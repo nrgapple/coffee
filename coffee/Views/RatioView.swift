@@ -25,14 +25,14 @@ struct RatioView: View {
             self.ratio = $0
         })
         HStack {
-            IncrementButton(direction: .down)
+            IncrementButton(value: viewModel.parts.ratio, part: .ratio, direction: .down)
             VStack {
                 Text("RATIO")
                     .font(.title2)
                 TextField("", text: valueBind) { isEditing in
                     self.isEdit = isEditing
                 } onCommit: {
-                    viewModel.Update(value: Double(self.ratio)!, part: .ratio)
+                    viewModel.Update(value: Float(self.ratio)!, part: .ratio)
                 }
                 .font(.largeTitle)
                     .keyboardType(.numberPad)
@@ -42,7 +42,7 @@ struct RatioView: View {
                     .font(.title3)
             }
             .frame(width: 150.0)
-            IncrementButton(direction: .up)
+            IncrementButton(value: viewModel.parts.ratio, part: .ratio, direction: .up)
         }
         .padding()
         .overlay(

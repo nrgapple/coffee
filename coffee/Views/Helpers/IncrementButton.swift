@@ -13,10 +13,16 @@ enum Direction {
 }
 
 struct IncrementButton: View {
+    @EnvironmentObject var viewModel: CoffeePartsViewModel
+    var value: Double
+    var part: Parts
     var direction: Direction = .up
+    
     var body: some View {
         Button(action: {
-            
+            viewModel.Update(
+                value: direction == Direction.up ? value + 1 : value - 1,
+                part: part)
         }) {
             Image(systemName: direction == .up ? "plus.circle.fill" : "minus.circle.fill")
         }
@@ -25,6 +31,6 @@ struct IncrementButton: View {
 
 struct IncrementButton_Previews: PreviewProvider {
     static var previews: some View {
-        IncrementButton(direction: .up)
+        IncrementButton(value: 0, part: .grounds)
     }
 }

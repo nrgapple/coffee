@@ -11,7 +11,27 @@ import Combine
 final class CoffeePartsViewModel: ObservableObject {
     @Published var parts: CoffeeParts = CoffeeParts()
     
-    func Update(value: Double, part: Parts) {
+    func Lock(part: Parts) {
+        parts.locked = part
+    }
+    
+    func UpdateUnits(part: Parts) {
+        switch part {
+        case .brew:
+            parts.brewAmount.unit = parts.brewAmount.unit == .grams ? .onces : .grams
+            break
+        case .water:
+            parts.waterAmount.unit = parts.waterAmount.unit == .grams ? .onces : .grams
+            break
+        case .grounds:
+            parts.groundsAmount.unit = parts.groundsAmount.unit == .grams ? .onces : .grams
+            break
+        default:
+            break
+        }
+    }
+    
+    func Update(value: Float, part: Parts) {
         let groundsPrev = parts.groundsAmount.value
         let waterPrev = parts.waterAmount.value
         let brewPrev = parts.brewAmount.value

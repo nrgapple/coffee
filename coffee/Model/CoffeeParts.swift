@@ -27,7 +27,7 @@ enum Parts {
 
 struct CoffeeParts {
     var locked: Parts = .ratio
-    var ratio: Double = 16
+    var ratio: Float = 16
     var waterAmount: CoffeePart = CoffeePart()
     var groundsAmount: CoffeePart = CoffeePart()
     var brewAmount: CoffeePart = CoffeePart()
@@ -35,5 +35,5 @@ struct CoffeeParts {
 
 struct CoffeePart {
     var unit: MeasuringUnit = .grams
-    var value: Double = 0
+    var value: Float = 0
 }

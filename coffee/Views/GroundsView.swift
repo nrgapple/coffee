@@ -24,24 +24,24 @@ struct GroundsView: View {
             self.value = $0
         })
         HStack {
-            IncrementButton(direction: .down)
+            IncrementButton(value: viewModel.parts.groundsAmount.value, part: .grounds, direction: .down)
             VStack {
                 Text("Grounds")
                     .font(.title2)
                 TextField("", text: valueBind) { isEditing in
                     self.isEdit = isEditing
                 } onCommit: {
-                    viewModel.Update(value: Double(self.value)!, part: .grounds)
+                    viewModel.Update(value: Float(self.value)!, part: .grounds)
                 }
                 .font(.largeTitle)
                 .keyboardType(.numberPad)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .multilineTextAlignment(.center)
                 Text(viewModel.parts.groundsAmount.unit == MeasuringUnit.grams ? "g" : "oz")
-                    .font(/*@START_MENU_TOKEN@*/.title3/*@END_MENU_TOKEN@*/)
+                    .font(.title3)
             }
             .frame(width: 150.0)
-            IncrementButton(direction: .up)
+            IncrementButton(value: viewModel.parts.groundsAmount.value, part: .grounds, direction: .up)
         }
         .padding()
         .overlay(

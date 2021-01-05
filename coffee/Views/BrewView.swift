@@ -24,14 +24,14 @@ struct BrewView: View {
             self.value = $0
         })
         HStack {
-            IncrementButton(direction: .down)
+            IncrementButton(value: viewModel.parts.brewAmount.value, part: .brew, direction: .down)
             VStack {
                 Text("Brew")
                     .font(.title2)
                 TextField("", text: valueBind) { isEditing in
                     self.isEdit = isEditing
                 } onCommit: {
-                    viewModel.Update(value: Double(self.value)!, part: .brew)
+                    viewModel.Update(value: Float(self.value)!, part: .brew)
                 }
                 .font(.largeTitle)
                 .keyboardType(.numberPad)
@@ -41,7 +41,7 @@ struct BrewView: View {
                     .font(.title3)
             }
             .frame(width: 150.0)
-            IncrementButton(direction: .up)
+            IncrementButton(value: viewModel.parts.brewAmount.value, part: .brew, direction: .up)
         }
         .padding()
         .overlay(
